@@ -21,6 +21,7 @@ class PasswordForm(forms.Form):
         return password2
 
 
+# form for registration
 class RegisterForm(PasswordForm):
     first_name = forms.CharField(
         label="Firstname",
@@ -36,4 +37,19 @@ class RegisterForm(PasswordForm):
         label="Email",
         max_length=255,
         required=True,
+    )
+
+
+# form for logging in
+class LoginForm(forms.Form):
+    email = forms.CharField(
+        label="Email",
+        max_length=255,
+        required=True
+    )
+    password = forms.CharField(
+        label="Password",
+        max_length=128,
+        widget=forms.PasswordInput(),
+        required=True
     )

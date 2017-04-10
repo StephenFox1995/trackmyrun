@@ -38,18 +38,24 @@ class RegisterForm(PasswordForm):
         max_length=255,
         required=True,
     )
+    username = forms.CharField(
+        label="Username",
+        max_length=255,
+        required=True,
+    )
 
 
 # form for logging in
 class LoginForm(forms.Form):
-    email = forms.CharField(
-        label="Email",
-        max_length=255,
-        required=True
-    )
     password = forms.CharField(
         label="Password",
         max_length=128,
         widget=forms.PasswordInput(),
         required=True
     )
+    username = forms.CharField(
+        label="Username",
+        max_length=255,
+        required=True,
+    )
+

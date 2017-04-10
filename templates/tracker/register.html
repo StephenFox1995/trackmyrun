@@ -5,9 +5,21 @@
     <head>
         <title>Track My Run | Register</title>
     </head>
-    {% for field in form.visible_fields %}
-
-    {% endfor %}
+    {# any registration errors#}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Woops!</strong> {{ error|escape }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                    <strong>Woops!</strong> {{ error|escape }}
+                </div>
+        {% endfor %}
+    {% endif %}
 
     <div class="register-area container">
         <form method="post" action="{% url 'tracker:register' %}">
@@ -20,6 +32,10 @@
                 <tr>
                     <td>{{ form.last_name.label_tag }}</td>
                     <td>{{ form.last_name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
                 </tr>
                 <tr>
                     <td>{{ form.email.label_tag }}</td>

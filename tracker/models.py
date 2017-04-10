@@ -1,26 +1,15 @@
 from django.db import models
-
-
-class Run(models.Model):
-    start = models.DateTimeField()
-    end = models.DateTimeField()
-    name = models.CharField(
-        max_length=100,
-        blank=True,
-        verbose_name="name"
-    )
-    created = models.DateTimeField(
-        auto_now_add=True
-    )
+from django.contrib.auth.models import User
 
 
 class Activity(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField()
-    username = models.CharField(
-        max_length=100,
-        blank=True,
-        verbose_name="username"
+    owner = models.ForeignKey(
+        User,
+        verbose_name="owner",
+        on_delete=models.CASCADE,
+        default=1
     )
     activity_type = models.CharField(
         max_length=100,

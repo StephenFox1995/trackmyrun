@@ -17,21 +17,48 @@ class ActivityRetrieveAPI(generics.RetrieveAPIView):
 
 @api_view(["GET", ])
 @permission_classes((permissions.AllowAny,))
-def token_login(request):
+def obtain_auth_token(request):
     if (not request.GET["username"]) or (not request.GET["password"]):
-        return Response({"detail": "Please provide username and password"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "Please provide username and password"}, status=status.HTTP_400_BAD_REQUEST)
 
     user = authenticate(username=request.GET["username"], password=request.GET["password"])
 
     if user:
         if user.is_active:
             try:
-                my_token = Token.objects.get(user=user)
-                return Response({"token": "{}".format(my_token.key)}, status=status.HTTP_200_OK)
+                token = Token.objects.get(user=user)
+                return Response({"token": "{}".format(token.key)}, status=status.HTTP_200_OK)
             except Exception as e:
                 print(e)
                 return Response({"message": "Could not generate token"})
         else:
-            return Response({"detail": "This account is not active."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "This account is not active."}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return Response({"detail": "Incorrect username or password"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "Incorrect username or password"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST', ])
+@permission_classes((permissions.AllowAny,))
+def register(request):
+    try:
+        username = request.data['username']
+        email = request.data['email']
+        first_name = request.data['first_name']
+        last_name = request.data['last_name']
+        password = request.data['password']
+
+    except KeyError:  # i.e incorrect details were sent
+        return Response({"message": "Please send the correct details"}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        user = get_user_model().objects.get(username=username)
+        if user:
+            return Response({"message": "User already exists"}, status=status.HTTP_400_BAD_REQUEST)
+    except get_user_model().DoesNotExist:
+        user = get_user_model().objects.create_user(username=username)
+        user.set_password(password)
+        user.email = email
+        user.first_name = first_name
+        user.last_name = last_name
+        user.save()
+        return Response({"message": "User successfully added"})

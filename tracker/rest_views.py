@@ -7,12 +7,12 @@ from .models import Activity
 from .serializers import ActivitySerializer
 
 
-class ActivityRetrieveAPI(generics.RetrieveAPIView):
+class ActivityRetrieveAPI(generics.ListAPIView):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ActivitySerializer
 
-    def get_object(self):
-        return Activity.objects.get(owner=1)
+    def get_queryset(self):
+        return Activity.objects.filter(owner=1)
 
 
 @api_view(["GET", ])
@@ -26,10 +26,9 @@ def obtain_auth_token(request):
     if user:
         if user.is_active:
             try:
-                token = Token.objects.get(user=user)
-                return Response({"token": "{}".format(token.key)}, status=status.HTTP_200_OK)
+                token = Token.objects.get_or_create(user=user)
+                return Response({"token": "{}".format(token[0])}, status=status.HTTP_200_OK)
             except Exception as e:
-                print(e)
                 return Response({"message": "Could not generate token"})
         else:
             return Response({"message": "This account is not active."}, status=status.HTTP_400_BAD_REQUEST)

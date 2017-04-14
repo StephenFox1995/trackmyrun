@@ -1,4 +1,5 @@
 from rest_framework import permissions, generics, authentication, status
+from rest_framework.views import APIView
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
@@ -7,12 +8,27 @@ from .models import Activity
 from .serializers import ActivitySerializer
 
 
-class ActivityRetrieveAPI(generics.ListAPIView):
+class ActivityRetrieveAPI(APIView):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ActivitySerializer
 
-    def get_queryset(self):
-        return Activity.objects.filter(owner=1)
+    def get(self, request, format=None):
+        activities = Activity.objects.filter(owner=1)
+        serializer = ActivitySerializer(activities, many=True)
+        return Response(serializer.data)
+
+
+    def post(self, request, format=None):
+        try:
+            gemometry = request.data['geomerty']
+            print(gemometry)
+        except Exception:
+            print('exception')
+
+
+
+
+
 
 
 @api_view(["GET", ])

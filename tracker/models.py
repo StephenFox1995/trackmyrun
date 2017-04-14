@@ -1,8 +1,11 @@
-from django.db import models
+from django.contrib.gis.db import models
+from django.contrib.gis.geos.collections import MultiLineString
+from django.contrib.gis.geos.linestring import LineString
 from django.contrib.auth.models import User
 
 
 class Activity(models.Model):
+    id = models.AutoField(primary_key=True)
     start = models.DateTimeField()
     end = models.DateTimeField()
     owner = models.ForeignKey(
@@ -18,3 +21,8 @@ class Activity(models.Model):
     created = models.DateTimeField(
         auto_now_add=True
     )
+    route = models.MultiLineStringField(verbose_name="route",
+                                        default=MultiLineString(LineString([(0, 0), (0, 0)]),
+                                                                LineString([(0, 0), (0, 0)])))
+
+

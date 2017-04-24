@@ -22,7 +22,5 @@ class Activity(models.Model):
         auto_now_add=True
     )
     route = models.MultiLineStringField(verbose_name="route",
-                                        default=MultiLineString(LineString([(0, 0), (0, 0)]),
-                                                                LineString([(0, 0), (0, 0)])))
-
+                                        default=MultiLineString)
 

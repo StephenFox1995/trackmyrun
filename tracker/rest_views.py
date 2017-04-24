@@ -12,23 +12,21 @@ class ActivityRetrieveAPI(APIView):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ActivitySerializer
 
-    def get(self, request, format=None):
+    def get(self, request):
         activities = Activity.objects.filter(owner=1)
         serializer = ActivitySerializer(activities, many=True)
         return Response(serializer.data)
 
-
     def post(self, request, format=None):
         try:
-            gemometry = request.data['geomerty']
-            print(gemometry)
+            serializer = ActivitySerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(status=status.HTTP_201_CREATED)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception:
-            print('exception')
-
-
-
-
-
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(["GET", ])
@@ -44,7 +42,7 @@ def obtain_auth_token(request):
             try:
                 token = Token.objects.get_or_create(user=user)
                 return Response({"token": "{}".format(token[0])}, status=status.HTTP_200_OK)
-            except Exception as e:
+            except Exception:
                 return Response({"message": "Could not generate token"})
         else:
             return Response({"message": "This account is not active."}, status=status.HTTP_400_BAD_REQUEST)

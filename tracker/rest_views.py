@@ -15,6 +15,9 @@ class ActivityRetrieveAPI(APIView):
     def get(self, request):
         activities = Activity.objects.filter(owner=1)
         serializer = ActivitySerializer(activities, many=True)
+        activities = serializer.data
+        for activity in activities:
+            print(activity)
         return Response(serializer.data)
 
     def post(self, request, format=None):

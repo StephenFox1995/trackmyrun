@@ -1,6 +1,5 @@
 from django.contrib.gis.db import models
-from django.contrib.gis.geos.collections import MultiLineString
-from django.contrib.gis.geos.linestring import LineString
+from django.contrib.gis.geos.collections import LineString
 from django.contrib.auth.models import User
 
 
@@ -21,6 +20,6 @@ class Activity(models.Model):
     created = models.DateTimeField(
         auto_now_add=True
     )
-    route = models.MultiLineStringField(verbose_name="route",
-                                        default=MultiLineString)
-
+    route = models.LineStringField(verbose_name="route",
+                                   default=LineString)
+    distance = models.FloatField(verbose_name="length", default=0)

@@ -1,0 +1,212 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+0001_initial.py	tracker/migrations/0001_initial.py	1;"	kind:file	line:1
+0002_auto_20170427_1312.py	tracker/migrations/0002_auto_20170427_1312.py	1;"	kind:file	line:1
+0003_auto_20170427_1610.py	tracker/migrations/0003_auto_20170427_1610.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	trackmyrun/settings.py	/^ALLOWED_HOSTS = ['*']$/;"	kind:variable	line:28
+APIView	tracker/rest_views.py	/^from rest_framework.views import APIView$/;"	kind:namespace	line:2
+AUTH_PASSWORD_VALIDATORS	trackmyrun/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:109
+Activity	tracker/admin.py	/^from .models import Activity$/;"	kind:namespace	line:2
+Activity	tracker/models.py	/^class Activity(models.Model):$/;"	kind:class	line:6
+Activity	tracker/rest_views.py	/^from .models import Activity$/;"	kind:namespace	line:7
+Activity	tracker/serializers.py	/^from .models import Activity$/;"	kind:namespace	line:3
+ActivityRetrieveAPI	tracker/rest_views.py	/^class ActivityRetrieveAPI(APIView):$/;"	kind:class	line:11
+ActivitySerializer	tracker/rest_views.py	/^from .serializers import ActivitySerializer$/;"	kind:namespace	line:8
+ActivitySerializer	tracker/serializers.py	/^class ActivitySerializer(GeoFeatureModelSerializer):$/;"	kind:class	line:6
+AppConfig	tracker/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+BASE_DIR	trackmyrun/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+CORS_ORIGIN_ALLOW_ALL	trackmyrun/settings.py	/^CORS_ORIGIN_ALLOW_ALL = True$/;"	kind:variable	line:59
+DATABASES	trackmyrun/settings.py	/^DATABASES = {$/;"	kind:variable	line:97
+DEBUG	trackmyrun/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+GeoFeatureModelSerializer	tracker/serializers.py	/^from rest_framework_gis.serializers import GeoFeatureModelSerializer$/;"	kind:namespace	line:1
+INSTALLED_APPS	trackmyrun/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	trackmyrun/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:128
+LineString	tracker/models.py	/^from django.contrib.gis.geos.collections import LineString$/;"	kind:namespace	line:2
+LoginForm	tracker/forms.py	/^class LoginForm(forms.Form):$/;"	kind:class	line:49
+MIDDLEWARE	trackmyrun/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:48
+Meta	tracker/serializers.py	/^    class Meta:$/;"	kind:class	line:8
+Migration	tracker/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	tracker/migrations/0002_auto_20170427_1312.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:12
+Migration	tracker/migrations/0003_auto_20170427_1610.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+MultiLineString	tracker/serializers.py	/^from django.contrib.gis.geos.collections import MultiLineString$/;"	kind:namespace	line:2
+PasswordForm	tracker/forms.py	/^class PasswordForm(forms.Form):$/;"	kind:class	line:4
+REST_FRAMEWORK	trackmyrun/settings.py	/^REST_FRAMEWORK = {$/;"	kind:variable	line:83
+ROOT_URLCONF	trackmyrun/settings.py	/^ROOT_URLCONF = 'trackmyrun.urls'$/;"	kind:variable	line:61
+RegisterForm	tracker/forms.py	/^class RegisterForm(PasswordForm):$/;"	kind:class	line:25
+Response	tracker/rest_views.py	/^from rest_framework.response import Response$/;"	kind:namespace	line:6
+SECRET_KEY	trackmyrun/settings.py	/^SECRET_KEY = 'ie1ztxwa-hzzevm87fjqvz76xkgnbskcwazo#h_++zu#dl^pw2'$/;"	kind:variable	line:23
+STATIC_URL	trackmyrun/settings.py	/^STATIC_URL = '\/templates\/'$/;"	kind:variable	line:142
+TEMPLATES	trackmyrun/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:63
+TIME_ZONE	trackmyrun/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:130
+TestCase	tracker/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+Token	tracker/rest_views.py	/^from rest_framework.authtoken.models import Token$/;"	kind:namespace	line:4
+TrackerConfig	tracker/apps.py	/^class TrackerConfig(AppConfig):$/;"	kind:class	line:4
+USE_I18N	trackmyrun/settings.py	/^USE_I18N = True$/;"	kind:variable	line:132
+USE_L10N	trackmyrun/settings.py	/^USE_L10N = True$/;"	kind:variable	line:134
+USE_TZ	trackmyrun/settings.py	/^USE_TZ = True$/;"	kind:variable	line:136
+User	tracker/models.py	/^from django.contrib.auth.models import User$/;"	kind:namespace	line:3
+ValidationError	tracker/views.py	/^from django.forms import ValidationError$/;"	kind:namespace	line:4
+WSGI_APPLICATION	trackmyrun/settings.py	/^WSGI_APPLICATION = 'trackmyrun.wsgi.application'$/;"	kind:variable	line:80
+__init__.py	tracker/__init__.py	1;"	kind:file	line:1
+__init__.py	tracker/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	trackmyrun/__init__.py	1;"	kind:file	line:1
+activity_type	tracker/models.py	/^    activity_type = models.CharField($/;"	kind:variable	line:16
+admin	tracker/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	trackmyrun/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:18
+admin.py	tracker/admin.py	1;"	kind:file	line:1
+api_view	tracker/rest_views.py	/^from rest_framework.decorators import api_view, permission_classes$/;"	kind:namespace	line:5
+application	trackmyrun/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	tracker/apps.py	1;"	kind:file	line:1
+authenticate	tracker/rest_views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:3
+authenticate	tracker/views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:2
+authentication	tracker/rest_views.py	/^from rest_framework import permissions, generics, authentication, status$/;"	kind:namespace	line:1
+auto_now_add	tracker/models.py	/^        auto_now_add=True$/;"	kind:variable	line:21
+calculate_distance	tracker/serializers.py	/^    def calculate_distance(self, coordinates):$/;"	kind:member	line:15
+clean_password2	tracker/forms.py	/^    def clean_password2(self):$/;"	kind:member	line:16
+contrib	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.db.models.fields$/;"	kind:namespace	line:6
+contrib	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.geos.linestring$/;"	kind:namespace	line:7
+created	tracker/models.py	/^    created = models.DateTimeField($/;"	kind:variable	line:20
+db	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.db.models.fields$/;"	kind:namespace	line:6
+db	tracker/migrations/0002_auto_20170427_1312.py	/^import django.db.models.deletion$/;"	kind:namespace	line:9
+default	tracker/models.py	/^                                   default=LineString)$/;"	kind:variable	line:24
+default	tracker/models.py	/^        default=1$/;"	kind:variable	line:14
+deletion	tracker/migrations/0002_auto_20170427_1312.py	/^import django.db.models.deletion$/;"	kind:namespace	line:9
+dependencies	tracker/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:12
+dependencies	tracker/migrations/0002_auto_20170427_1312.py	/^    dependencies = [$/;"	kind:variable	line:14
+dependencies	tracker/migrations/0003_auto_20170427_1610.py	/^    dependencies = [$/;"	kind:variable	line:10
+distance	tracker/models.py	/^    distance = models.FloatField(verbose_name="length", default=0)$/;"	kind:variable	line:25
+django	manage.py	/^            import django$/;"	kind:namespace	line:14
+django	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.db.models.fields$/;"	kind:namespace	line:6
+django	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.geos.linestring$/;"	kind:namespace	line:7
+django	tracker/migrations/0002_auto_20170427_1312.py	/^import django.db.models.deletion$/;"	kind:namespace	line:9
+email	tracker/forms.py	/^    email = forms.EmailField($/;"	kind:variable	line:36
+end	tracker/models.py	/^    end = models.DateTimeField()$/;"	kind:variable	line:9
+execute_from_command_line	manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+field	tracker/migrations/0003_auto_20170427_1610.py	/^            field=models.FloatField(default=0, verbose_name='length'),$/;"	kind:variable	line:18
+fields	tracker/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:18
+fields	tracker/migrations/0002_auto_20170427_1312.py	/^            fields=[$/;"	kind:variable	line:22
+fields	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.db.models.fields$/;"	kind:namespace	line:6
+fields	tracker/serializers.py	/^        fields = ('route', 'start', 'end', 'created', 'owner_id', 'activity_type')$/;"	kind:variable	line:12
+first_name	tracker/forms.py	/^    first_name = forms.CharField($/;"	kind:variable	line:26
+forms	tracker/forms.py	/^from django import forms$/;"	kind:namespace	line:1
+forms	tracker/views.py	/^from . import forms$/;"	kind:namespace	line:5
+forms.py	tracker/forms.py	1;"	kind:file	line:1
+generics	tracker/rest_views.py	/^from rest_framework import permissions, generics, authentication, status$/;"	kind:namespace	line:1
+geo_field	tracker/serializers.py	/^        geo_field = 'route'$/;"	kind:variable	line:10
+geos	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.geos.linestring$/;"	kind:namespace	line:7
+get	tracker/rest_views.py	/^    def get(self, request):$/;"	kind:member	line:15
+get_user_model	tracker/rest_views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:3
+get_user_model	tracker/views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:2
+get_wsgi_application	trackmyrun/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+gis	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.db.models.fields$/;"	kind:namespace	line:6
+gis	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.geos.linestring$/;"	kind:namespace	line:7
+home	tracker/views.py	/^def home(request):$/;"	kind:function	line:60
+id	tracker/models.py	/^    id = models.AutoField(primary_key=True)$/;"	kind:variable	line:7
+id_field	tracker/serializers.py	/^        id_field = False$/;"	kind:variable	line:11
+include	trackmyrun/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:17
+initial	tracker/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
+label	tracker/forms.py	/^        label="Email",$/;"	kind:variable	line:37
+label	tracker/forms.py	/^        label="Enter password"$/;"	kind:variable	line:8
+label	tracker/forms.py	/^        label="Firstname",$/;"	kind:variable	line:27
+label	tracker/forms.py	/^        label="Lastname",$/;"	kind:variable	line:32
+label	tracker/forms.py	/^        label="Password",$/;"	kind:variable	line:51
+label	tracker/forms.py	/^        label="Re-enter password"$/;"	kind:variable	line:13
+label	tracker/forms.py	/^        label="Username",$/;"	kind:variable	line:42
+label	tracker/forms.py	/^        label="Username",$/;"	kind:variable	line:57
+last_name	tracker/forms.py	/^    last_name = forms.CharField($/;"	kind:variable	line:31
+linestring	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.geos.linestring$/;"	kind:namespace	line:7
+login	tracker/rest_views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:3
+login	tracker/views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:2
+login_	tracker/views.py	/^def login_(request):$/;"	kind:function	line:36
+logout	tracker/rest_views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:3
+logout	tracker/views.py	/^from django.contrib.auth import authenticate, login, logout, get_user_model$/;"	kind:namespace	line:2
+manage.py	manage.py	1;"	kind:file	line:1
+max_length	tracker/forms.py	/^        max_length=128,$/;"	kind:variable	line:11
+max_length	tracker/forms.py	/^        max_length=128,$/;"	kind:variable	line:52
+max_length	tracker/forms.py	/^        max_length=128,$/;"	kind:variable	line:6
+max_length	tracker/forms.py	/^        max_length=255,$/;"	kind:variable	line:38
+max_length	tracker/forms.py	/^        max_length=255,$/;"	kind:variable	line:43
+max_length	tracker/forms.py	/^        max_length=255,$/;"	kind:variable	line:58
+max_length	tracker/forms.py	/^        max_length=50,$/;"	kind:variable	line:28
+max_length	tracker/forms.py	/^        max_length=50,$/;"	kind:variable	line:33
+max_length	tracker/models.py	/^        max_length=100,$/;"	kind:variable	line:17
+migrations	tracker/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+migrations	tracker/migrations/0002_auto_20170427_1312.py	/^from django.db import migrations, models$/;"	kind:namespace	line:8
+migrations	tracker/migrations/0003_auto_20170427_1610.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+model	tracker/serializers.py	/^        model = Activity$/;"	kind:variable	line:9
+model_name	tracker/migrations/0003_auto_20170427_1610.py	/^            model_name='activity',$/;"	kind:variable	line:16
+models	tracker/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	tracker/migrations/0002_auto_20170427_1312.py	/^from django.db import migrations, models$/;"	kind:namespace	line:8
+models	tracker/migrations/0002_auto_20170427_1312.py	/^import django.contrib.gis.db.models.fields$/;"	kind:namespace	line:6
+models	tracker/migrations/0002_auto_20170427_1312.py	/^import django.db.models.deletion$/;"	kind:namespace	line:9
+models	tracker/migrations/0003_auto_20170427_1610.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	tracker/models.py	/^from django.contrib.gis.db import models$/;"	kind:namespace	line:1
+models.py	tracker/models.py	1;"	kind:file	line:1
+name	tracker/apps.py	/^    name = 'tracker'$/;"	kind:variable	line:5
+name	tracker/migrations/0001_initial.py	/^            name='Run',$/;"	kind:variable	line:17
+name	tracker/migrations/0002_auto_20170427_1312.py	/^            name='Activity',$/;"	kind:variable	line:21
+name	tracker/migrations/0003_auto_20170427_1610.py	/^            name='distance',$/;"	kind:variable	line:17
+obtain_auth_token	tracker/rest_views.py	/^def obtain_auth_token(request):$/;"	kind:function	line:37
+on_delete	tracker/models.py	/^        on_delete=models.CASCADE,$/;"	kind:variable	line:13
+operations	tracker/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:15
+operations	tracker/migrations/0002_auto_20170427_1312.py	/^    operations = [$/;"	kind:variable	line:19
+operations	tracker/migrations/0003_auto_20170427_1610.py	/^    operations = [$/;"	kind:variable	line:14
+os	manage.py	/^import os$/;"	kind:namespace	line:2
+os	trackmyrun/settings.py	/^import os$/;"	kind:namespace	line:13
+os	trackmyrun/wsgi.py	/^import os$/;"	kind:namespace	line:10
+owner	tracker/models.py	/^    owner = models.ForeignKey($/;"	kind:variable	line:10
+password	tracker/forms.py	/^    password = forms.CharField($/;"	kind:variable	line:5
+password	tracker/forms.py	/^    password = forms.CharField($/;"	kind:variable	line:50
+password2	tracker/forms.py	/^    password2 = forms.CharField($/;"	kind:variable	line:10
+permission_classes	tracker/rest_views.py	/^    permission_classes = (permissions.IsAuthenticated,)$/;"	kind:variable	line:12
+permission_classes	tracker/rest_views.py	/^from rest_framework.decorators import api_view, permission_classes$/;"	kind:namespace	line:5
+permissions	tracker/rest_views.py	/^from rest_framework import permissions, generics, authentication, status$/;"	kind:namespace	line:1
+post	tracker/rest_views.py	/^    def post(self, request, format=None):$/;"	kind:member	line:23
+redirect	tracker/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+register	tracker/rest_views.py	/^def register(request):$/;"	kind:function	line:58
+register	tracker/views.py	/^def register(request):$/;"	kind:function	line:8
+render	tracker/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+required	tracker/forms.py	/^        required=True$/;"	kind:variable	line:54
+required	tracker/forms.py	/^        required=True,$/;"	kind:variable	line:29
+required	tracker/forms.py	/^        required=True,$/;"	kind:variable	line:34
+required	tracker/forms.py	/^        required=True,$/;"	kind:variable	line:39
+required	tracker/forms.py	/^        required=True,$/;"	kind:variable	line:44
+required	tracker/forms.py	/^        required=True,$/;"	kind:variable	line:59
+rest_urls.py	tracker/rest_urls.py	1;"	kind:file	line:1
+rest_views	tracker/rest_urls.py	/^from tracker import rest_views$/;"	kind:namespace	line:2
+rest_views.py	tracker/rest_views.py	1;"	kind:file	line:1
+reverse	tracker/views.py	/^from django.core.urlresolvers import reverse$/;"	kind:namespace	line:3
+route	tracker/models.py	/^    route = models.LineStringField(verbose_name="route",$/;"	kind:variable	line:23
+serializer_class	tracker/rest_views.py	/^    serializer_class = ActivitySerializer$/;"	kind:variable	line:13
+serializers.py	tracker/serializers.py	1;"	kind:file	line:1
+settings	tracker/migrations/0002_auto_20170427_1312.py	/^from django.conf import settings$/;"	kind:namespace	line:5
+settings.py	trackmyrun/settings.py	1;"	kind:file	line:1
+start	tracker/models.py	/^    start = models.DateTimeField()$/;"	kind:variable	line:8
+status	tracker/rest_views.py	/^from rest_framework import permissions, generics, authentication, status$/;"	kind:namespace	line:1
+sys	manage.py	/^import sys$/;"	kind:namespace	line:3
+tests.py	tracker/tests.py	1;"	kind:file	line:1
+unicode_literals	tracker/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+unicode_literals	tracker/migrations/0002_auto_20170427_1312.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+unicode_literals	tracker/migrations/0003_auto_20170427_1610.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+url	tracker/rest_urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+url	tracker/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+url	trackmyrun/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:17
+urlpatterns	tracker/rest_urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
+urlpatterns	tracker/urls.py	/^urlpatterns = [$/;"	kind:variable	line:4
+urlpatterns	trackmyrun/urls.py	/^urlpatterns = [$/;"	kind:variable	line:21
+urls.py	tracker/urls.py	1;"	kind:file	line:1
+urls.py	trackmyrun/urls.py	1;"	kind:file	line:1
+username	tracker/forms.py	/^    username = forms.CharField($/;"	kind:variable	line:41
+username	tracker/forms.py	/^    username = forms.CharField($/;"	kind:variable	line:56
+verbose_name	tracker/models.py	/^        verbose_name="activity_type"$/;"	kind:variable	line:18
+verbose_name	tracker/models.py	/^        verbose_name="owner",$/;"	kind:variable	line:12
+views	tracker/urls.py	/^from . import views$/;"	kind:namespace	line:2
+views.py	tracker/views.py	1;"	kind:file	line:1
+widget	tracker/forms.py	/^        widget=forms.PasswordInput(),$/;"	kind:variable	line:12
+widget	tracker/forms.py	/^        widget=forms.PasswordInput(),$/;"	kind:variable	line:53
+widget	tracker/forms.py	/^        widget=forms.PasswordInput(),$/;"	kind:variable	line:7
+wsgi.py	trackmyrun/wsgi.py	1;"	kind:file	line:1

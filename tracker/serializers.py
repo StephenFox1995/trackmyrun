@@ -1,6 +1,5 @@
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
-from rest_framework_gis.fields import GeometryField
-# from rest_framework_gis.fields import GeoJsonDict
+from django.contrib.gis.geos.collections import MultiLineString
 from .models import Activity
 
 
@@ -10,7 +9,11 @@ class ActivitySerializer(GeoFeatureModelSerializer):
         model = Activity
         geo_field = 'route'
         id_field = False
-        fields = ('route', 'start', 'end', 'created', 'owner_id', 'activity_type')
+        fields = ('route', 'start', 'end', 'created', 'owner_id', 'distance', 'activity_type')
 
+
+    def calculate_distance(self, coordinates):
+        m_string = MultiLineString(coordinates)
+        return m_string.length
 
 

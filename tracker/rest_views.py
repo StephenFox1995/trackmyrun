@@ -8,7 +8,6 @@ from .models import Activity
 from .serializers import ActivitySerializer
 
 
-
 class ActivityRetrieveAPI(APIView):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = ActivitySerializer
@@ -16,14 +15,13 @@ class ActivityRetrieveAPI(APIView):
     def get(self, request):
         activities = Activity.objects.all()
         serializer = ActivitySerializer(activities, many=True)
-        activities = serializer.data
         return Response(serializer.data)
 
-    def post(self, request, format=None):
+    def post(self, request):
         try:
             serializer = ActivitySerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()
+                serializer.save(owner_id=request.user.id)
                 return Response(status=status.HTTP_201_CREATED)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

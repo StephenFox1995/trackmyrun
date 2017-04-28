@@ -13,7 +13,7 @@ class ActivityRetrieveAPI(APIView):
     serializer_class = ActivitySerializer
 
     def get(self, request):
-        activities = Activity.objects.all()
+        activities = Activity.objects.all().order_by('-start')
         serializer = ActivitySerializer(activities, many=True)
         return Response(serializer.data)
 

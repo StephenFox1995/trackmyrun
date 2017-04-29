@@ -28,10 +28,13 @@ def activity(request):
 
 @api_view(["GET", ])
 @permission_classes((permissions.IsAuthenticated,))
-def get_activities_for_user(request):
-    activities = Activity.objects.filter(owner_id=request.user.id).order_by('-start')
-    serializer = ActivitySerializer(activities, many=True)
-    return Response(serializer.data)
+def get_activities_for_user(request, owner_id):
+    activities = Activity.objects.filter(owner_id=owner_id).order_by('-start')
+    if len(activities) > 0:
+        serializer = ActivitySerializer(activities, many=True)
+        return Response(serializer.data)
+    else:
+        return Response({"message": "No data for that user"}, status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(["GET", ])

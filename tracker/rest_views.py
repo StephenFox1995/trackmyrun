@@ -1,5 +1,4 @@
 from rest_framework import permissions, generics, authentication, status
-from rest_framework.views import APIView
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
@@ -8,16 +7,14 @@ from .models import Activity
 from .serializers import ActivitySerializer
 
 
-class ActivityRetrieveAPI(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
-    serializer_class = ActivitySerializer
-
-    def get(self, request):
-        activities = Activity.objects.all().order_by('-start')
+@api_view(["GET", "POST"])
+@permission_classes((permissions.IsAuthenticated,))
+def activity(request):
+    if request.method == "GET":
+        activities = Activity.objects.all().order_by("-start")
         serializer = ActivitySerializer(activities, many=True)
         return Response(serializer.data)
-
-    def post(self, request):
+    elif request.method == "POST":
         try:
             serializer = ActivitySerializer(data=request.data)
             if serializer.is_valid():
@@ -26,7 +23,15 @@ class ActivityRetrieveAPI(APIView):
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception:
-            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"message": "Activity successfully created"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(["GET", ])
+@permission_classes((permissions.IsAuthenticated,))
+def get_activities_for_user(request):
+    activities = Activity.objects.filter(owner_id=request.user.id).order_by('-start')
+    serializer = ActivitySerializer(activities, many=True)
+    return Response(serializer.data)
 
 
 @api_view(["GET", ])
@@ -50,7 +55,7 @@ def obtain_auth_token(request):
         return Response({"message": "Incorrect username or password"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['POST', ])
+@api_view(["POST", ])
 @permission_classes((permissions.AllowAny,))
 def register(request):
     try:

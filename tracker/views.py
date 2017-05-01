@@ -6,6 +6,13 @@ from django.forms import ValidationError
 from . import forms
 
 
+def index(request):
+    if request.user.is_authenticated():
+        return redirect(reverse('tracker:home'))
+    else:
+        return redirect(reverse('tracker:login'))
+
+
 def register(request):
     if request.POST:
         form = forms.RegisterForm(request.POST)
@@ -56,6 +63,12 @@ def login_(request):
     else:
         form = forms.LoginForm()
     return render(request, 'tracker/login.html', {'form': form})
+
+
+@login_required
+def logout_(request):
+    logout(request)
+    return redirect(reverse('tracker:login'))
 
 
 @login_required

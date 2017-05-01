@@ -53,6 +53,11 @@ var actvityRenderer = function (el) {
         });
     }
 
+    /**
+     * Displays an activity on a LeafletJS map.
+     * @param map reference
+     * @param activity The activity to display
+     * */
     function displayOnMap(map, activity) {
         map.setView([
             activity.geometry.coordinates[0][1],

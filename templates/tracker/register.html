@@ -5,6 +5,19 @@
     <head>
         <title>Track My Run | Register</title>
     </head>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand">Track My Run | Home</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="{% url 'tracker:login' %}">Login</a>
+            </div>
+        </div>
+    </nav>
     {# any registration errors#}
     {% if form.errors %}
         {% for field in form %}
@@ -16,8 +29,8 @@
         {% endfor %}
         {% for error in form.non_field_errors %}
             <div class="alert alert-danger" role="alert">
-                    <strong>Woops!</strong> {{ error|escape }}
-                </div>
+                <strong>Woops!</strong> {{ error|escape }}
+            </div>
         {% endfor %}
     {% endif %}
 

@@ -10,11 +10,21 @@
         <title>Track My Run | Home</title>
     </head>
     <body>
-    <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="#">Track My Run | Home </a>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'tracker:home' %}">Track My Run | Home</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="{% url 'tracker:logout' %}">Logout</a>
+            </div>
+        </div>
     </nav>
 
-    {% leaflet_map "map"  callback="initMap" %}
+    {% leaflet_map "map" callback="initMap" %}
     <div style="width: 80%; margin-left: 10%; margin-top: 20px;">
         <h3>Activities</h3>
         <div id="activities"></div>

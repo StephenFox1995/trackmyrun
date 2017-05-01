@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.forms import ValidationError
 from . import forms
@@ -57,5 +58,6 @@ def login_(request):
     return render(request, 'tracker/login.html', {'form': form})
 
 
+@login_required
 def home(request):
     return render(request, 'tracker/home.html')

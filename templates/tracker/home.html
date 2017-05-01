@@ -1,39 +1,46 @@
 {% extends "tracker/base.html" %}
 {% load staticfiles %}
-
+{% load leaflet_tags %}
 {% block content %}
     <head>
+
+        {% leaflet_css plugins="forms" %}
+        {% leaflet_js plugins="forms" %}
+
         <title>Track My Run | Home</title>
     </head>
+    <body>
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#">Track My Run | Home </a>
+    </nav>
 
-    <table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    {% leaflet_map "map"  callback="initMap" %}
+    <div style="width: 80%; margin-left: 10%; margin-top: 20px;">
+        <h3>Activities</h3>
+        <div id="activities"></div>
+    </div>
+    </body>
+
+    <script type="text/javascript">
+        // Load activities.
+        var globalMap = null;
+        $(document).ready(function () {
+            var featureCollection = null;
+            $.get({
+                url: '/api/activity',
+                success: function (data) {
+                    featureCollection = data;
+                    actvityRenderer('#activities').displayInTable(featureCollection.features, handleActivityClick);
+                }
+            });
+
+            function handleActivityClick(index) {
+                var activity = featureCollection.features[index];
+                actvityRenderer().displayOnMap(globalMap, activity);
+            }
+        });
+        function initMap(map) {
+            globalMap = map;
+        }
+    </script>
 {% endblock %}
